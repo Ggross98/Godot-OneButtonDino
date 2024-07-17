@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://1wws3kgbrity"]
+
+[ext_resource type="Texture2D" uid="uid://cbugfcmqu40pv" path="res://assets/sprites/platforms.png" id="1_ibcoo"]
+[ext_resource type="Script" path="res://scripts/Platform.cs" id="1_qafe4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtt54"]
+atlas = ExtResource("1_ibcoo")
+region = Rect2(15.8723, 0, 32.0508, 8.94997)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7bt0"]
+size = Vector2(31.8182, 1.52113)
+
+[node name="Platform" type="StaticBody2D"]
+scale = Vector2(0.88, 1)
+collision_mask = 0
+script = ExtResource("1_qafe4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_wtt54")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.4186e-07, -2.76056)
+shape = SubResource("RectangleShape2D_q7bt0")
+one_way_collision = true
